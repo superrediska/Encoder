@@ -9,15 +9,18 @@ public class CaesarCipher {
         for (int i = 0; i < message.length(); i++) {
             char aChar = message.charAt(i);
             int index = alphabet.indexOf(aChar);
-            if (index >= 0){
+            if (index >= 0) {
                 int newIndex = (index + key) % alphabet.length();
                 char charAt = 0;
-                if(newIndex < 0){
-                    charAt = alphabet.charAt(newIndex + alphabet.length());
-                }
-                else{
-                    charAt = alphabet.charAt(newIndex);
-                }                       
+                if(newIndex < 0) charAt = alphabet.charAt(newIndex + alphabet.length());
+                charAt = alphabet.charAt(newIndex);
+
+
+//                if (newIndex < 0) {
+//                    charAt = alphabet.charAt(newIndex + alphabet.length());
+//                } else {
+//                    charAt = alphabet.charAt(newIndex);
+//                }
                 builder.append(charAt);
             }
 

@@ -1,3 +1,5 @@
+import lombok.SneakyThrows;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,15 +12,20 @@ public class ConsoleHelper {
      private ConsoleHelper() {
 
      }
+
      public static void writeMessage(String message){
          System.out.println(message);
      }
-     public static String readString() throws IOException {
+
+     @SneakyThrows
+     public static String readString()  {
          return console.readLine();
      }
-     public static int readInt() throws IOException {
+
+     public static int readInt() {
          return Integer.parseInt(readString());
      }
+
      public static Path buildFileName(String path, String suffix){
          Path fullPath = Path.of(path);
          Path parent = fullPath.getParent();
