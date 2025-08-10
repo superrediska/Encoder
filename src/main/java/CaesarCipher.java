@@ -11,9 +11,7 @@ public class CaesarCipher {
             int index = alphabet.indexOf(aChar);
             if (index >= 0) {
                 int newIndex = (index + key) % alphabet.length();
-                char charAt = 0;
-                if(newIndex < 0) charAt = alphabet.charAt(newIndex + alphabet.length());
-                charAt = alphabet.charAt(newIndex);
+                char charAt = newIndex < 0 ? alphabet.charAt(newIndex + alphabet.length()) : alphabet.charAt(newIndex);
 
 
 //                if (newIndex < 0) {
