@@ -2,15 +2,16 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (true) {
-            ConsoleHelper.writeMessage("Выберите действие введя его номер");
-            ConsoleHelper.writeMessage("1.Зашифровать текст в файле с помощью ключа");
-            ConsoleHelper.writeMessage("2.Расшифровать текст в файле с помощью ключа");
-            ConsoleHelper.writeMessage("3.Подобрать ключ используя Bruteforce");
-            ConsoleHelper.writeMessage("4.Расшифровать текст с помощью синтаксического перебора");
-            ConsoleHelper.writeMessage("5.Выход из программы");
+            ConsoleHelper.writeMessage("""
+                    Выберите действие введя его номер
+                    1.Зашифровать текст в файле с помощью ключа
+                    2.Расшифровать текст в файле с помощью ключа
+                    3.Подобрать ключ используя Bruteforce
+                    4.Расшифровать текст с помощью синтаксического перебора
+                    5.Выход из программы""");
             String answer = scan.nextLine();
             switch (answer) {
                 case "1" -> EncryptedDecrypted.encryptedDecrypted(true);
