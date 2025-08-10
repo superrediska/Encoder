@@ -12,11 +12,16 @@ public class Bruteforce {
         Scanner scan = new Scanner(System.in);
         ConsoleHelper.writeMessage("Введите путь к файлу для его расшифровки");
         String src = scan.nextLine();
-        ConsoleHelper.writeMessage("Введите путь к файлу куда записать результат");
         Path dst = ConsoleHelper.buildFileName(src, "_brute");
+        CaesarCipher caesarCipher = new CaesarCipher();
+
         try (BufferedReader reader = Files.newBufferedReader(Path.of(src));
              BufferedWriter writer = Files.newBufferedWriter(dst);
         ) {
+            while (reader.ready()){
+                String string = reader.readLine();
+                String decrypt = caesarCipher.decrypt(string, 1);
+            }
         }
 
     }
