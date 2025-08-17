@@ -31,5 +31,7 @@ public class CaesarCipher {
         return encrypt(message, key * (-1));
     }
 
-
+    public int alphabetLength(){
+        return alphabet.length();
+    }
 }
